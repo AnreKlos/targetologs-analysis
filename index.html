@@ -13,7 +13,6 @@ body {
   color: #e0e0e0;
   line-height: 1.5;
 }
-
 .hero {
   background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a0a1a 100%);
   padding: 60px 20px;
@@ -29,7 +28,7 @@ body {
   margin-bottom: 12px;
 }
 .hero p { color: #888; font-size: 16px; }
-
+.hero .sub { color: #666; font-size: 14px; margin-top: 8px; }
 .stats-row {
   display: flex;
   justify-content: center;
@@ -41,9 +40,7 @@ body {
 .stat-item { text-align: center; }
 .stat-item .num { font-size: 32px; font-weight: 800; color: #8b5cf6; }
 .stat-item .label { font-size: 13px; color: #666; margin-top: 4px; }
-
 .container { max-width: 900px; margin: 0 auto; padding: 30px 16px; }
-
 .card {
   background: #0e0e16;
   border: 1px solid #1a1a2e;
@@ -54,7 +51,6 @@ body {
   transition: all 0.2s;
 }
 .card:hover { border-color: #2a2a4e; }
-
 .card-header {
   display: flex;
   align-items: center;
@@ -62,118 +58,73 @@ body {
   gap: 16px;
   user-select: none;
 }
-
 .card-num {
-  width: 36px;
-  height: 36px;
+  width: 36px; height: 36px;
   background: linear-gradient(135deg, #8b5cf6, #6d28d9);
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 14px;
-  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px; color: #fff;
   flex-shrink: 0;
 }
-
 .card-info { flex: 1; min-width: 0; }
 .card-info .name { font-weight: 600; font-size: 16px; color: #fff; }
 .card-info .subs { font-size: 13px; color: #8b5cf6; margin-top: 2px; }
 .card-info .link { font-size: 12px; color: #555; margin-top: 1px; }
-
 .card-badge {
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  white-space: nowrap;
-  flex-shrink: 0;
+  padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;
+  white-space: nowrap; flex-shrink: 0;
 }
-.badge-ai-yes { background: #065f46; color: #6ee7b7; }
-.badge-ai-no { background: #1c1917; color: #a8a29e; }
 .badge-price { background: #1c1917; color: #fbbf24; }
-
-.card-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.card.open .card-body {
-  max-height: 2000px;
-}
-
-.card-body-inner {
-  padding: 0 20px 20px;
-  border-top: 1px solid #1a1a2e;
-  padding-top: 16px;
-}
-
+.card-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.card.open .card-body { max-height: 2000px; }
+.card-body-inner { padding: 0 20px 20px; border-top: 1px solid #1a1a2e; padding-top: 16px; }
 .field { margin-bottom: 14px; }
-.field:last-child { margin-bottom: 0; }
 .field-label { font-size: 11px; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
 .field-value { font-size: 14px; color: #ccc; line-height: 1.5; }
-
-.ai-tag { 
-  display: inline-block; 
-  padding: 3px 10px; 
-  border-radius: 12px; 
-  font-size: 12px; 
-  font-weight: 500;
+.ai-tag {
+  display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500;
 }
 .ai-yes { background: #065f46; color: #6ee7b7; }
 .ai-partial { background: #451a03; color: #fbbf24; }
 .ai-no { background: #1c1917; color: #a8a29e; }
-
 .insights-section {
-  margin-top: 40px;
-  padding: 30px;
-  background: #0e0e16;
-  border: 1px solid #1a1a2e;
-  border-radius: 16px;
+  margin-top: 40px; padding: 30px;
+  background: #0e0e16; border: 1px solid #1a1a2e; border-radius: 16px;
 }
 .insights-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px; color: #8b5cf6; }
 .insights-section ul { list-style: none; }
 .insights-section li {
-  padding: 12px 0;
-  border-bottom: 1px solid #1a1a2e;
-  font-size: 14px;
-  color: #bbb;
+  padding: 12px 0; border-bottom: 1px solid #1a1a2e; font-size: 14px; color: #bbb;
 }
 .insights-section li:last-child { border-bottom: none; }
 .insights-section .hl { color: #a78bfa; font-weight: 600; }
-
-.toggle-icon {
-  font-size: 18px;
-  color: #555;
-  transition: transform 0.3s;
-  flex-shrink: 0;
-}
+.toggle-icon { font-size: 18px; color: #555; transition: transform 0.3s; flex-shrink: 0; }
 .card.open .toggle-icon { transform: rotate(180deg); }
-
-@media (max-width: 600px) {
-  .hero h1 { font-size: 24px; }
-  .card-header { flex-wrap: wrap; }
-  .card-badge { font-size: 10px; padding: 4px 8px; }
+.gsheets-link {
+  text-align: center; margin: 30px 0; padding: 20px;
+  background: #0e0e16; border: 1px solid #1a1a2e; border-radius: 12px;
 }
+.gsheets-link a { color: #8b5cf6; text-decoration: none; font-weight: 600; }
+.gsheets-link a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
-
 <div class="hero">
   <h1>Топ-8 таргетологов ВКонтакте</h1>
   <p>Конкурентный анализ: цены, кейсы, ниши, AI — кликни по карточке для деталей</p>
+  <div class="sub">Июнь 2026 • Исследование для стратегии позиционирования</div>
 </div>
-
 <div class="stats-row">
   <div class="stat-item"><div class="num">8</div><div class="label">экспертов</div></div>
   <div class="stat-item"><div class="num">220k+</div><div class="label">подписчиков всего</div></div>
   <div class="stat-item"><div class="num">7/8</div><div class="label">без AI</div></div>
   <div class="stat-item"><div class="num">5/8</div><div class="label">скрывают цены</div></div>
 </div>
-
 <div class="container">
+
+<div class="gsheets-link">
+  📊 <a href="https://docs.google.com/spreadsheets/d/1IirOtsEphTl8JQxjBqRYwxJccuGRoYmQ2cOTafYhBCM/edit?usp=drivesdk" target="_blank">Открыть полную Google Таблицу</a> — все данные в структурированном виде
+</div>
 <div class="card" onclick="this.classList.toggle('open')">
   <div class="card-header">
     <div class="card-num">1</div>
@@ -188,38 +139,14 @@ body {
   </div>
   <div class="card-body">
     <div class="card-body-inner">
-      <div class="field">
-        <div class="field-label">💰 Стоимость услуг</div>
-        <div class="field-value">Не указано (обсуждается в ЛС)</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📚 Обучающие продукты</div>
-        <div class="field-value">Не указано (упоминает обучение через нейросети)</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🎯 Ниши</div>
-        <div class="field-value">Локальный бизнес (Омск), химчистка, тату, мебель, инфобиз</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📊 Кейсы</div>
-        <div class="field-value">Кейс 1: подписчики VK по 25 руб. Кейс 2: бюджет 500 000 руб. на розыгрыш</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⭐ УТП / Фишка</div>
-        <div class="field-value">«Не блогер, не продюсер». Холодный трафик ВК. Окупаемость 5-20x. Опыт с 2015.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🤖 AI</div>
-        <div class="field-value">Не использует — классический холодный трафик, стандартные креативы</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⚠️ Слабые места</div>
-        <div class="field-value" style="color:#fca5a5">Нет кейсов с цифрами. Активность на стене — 11 постов. Нет прайса. Нет обучения.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🚀 Что можно забрать</div>
-        <div class="field-value" style="color:#6ee7b7">Сделать упор на прозрачные цены + регулярные кейс-стади. Добавить обучение как продукт.</div>
-      </div>
+      <div class="field"><div class="field-label">💰 Стоимость услуг</div><div class="field-value">Не указано (обсуждается в ЛС)</div></div>
+      <div class="field"><div class="field-label">📚 Обучающие продукты</div><div class="field-value">Не указано (упоминает обучение через нейросети)</div></div>
+      <div class="field"><div class="field-label">🎯 Ниши</div><div class="field-value">Локальный бизнес (Омск), химчистка, тату, мебель, инфобиз</div></div>
+      <div class="field"><div class="field-label">📊 Кейсы</div><div class="field-value">Кейс 1: подписчики VK по 25 руб. Кейс 2: бюджет 500 000 руб. на розыгрыш</div></div>
+      <div class="field"><div class="field-label">⭐ УТП / Фишка</div><div class="field-value">«Не блогер, не продюсер». Холодный трафик ВК. Окупаемость 5-20x. Опыт с 2015.</div></div>
+      <div class="field"><div class="field-label">🤖 AI</div><div class="field-value">Не использует — классический холодный трафик, стандартные креативы</div></div>
+      <div class="field"><div class="field-label">⚠️ Слабые места</div><div class="field-value" style="color:#fca5a5">Нет кейсов с цифрами. Активность на стене — 11 постов. Нет прайса. Нет обучения.</div></div>
+      <div class="field"><div class="field-label">🚀 Что можно забрать</div><div class="field-value" style="color:#6ee7b7">Сделать упор на прозрачные цены + регулярные кейс-стади. Добавить обучение как продукт.</div></div>
     </div>
   </div>
 </div>
@@ -228,7 +155,7 @@ body {
     <div class="card-num">2</div>
     <div class="card-info">
       <div class="name">Юлия Филиппова | Таргетолог Реклама ВКонтакте СММ</div>
-      <div class="subs">Таргет ВК (ведение месяц): от 20 000₽. SMM сопровождение: от 15 000₽. Сайт Tilda/Taplink: 15 000₽. Оформление сообщества: 10 000₽. Нейрофото/видео: 1 500-3 000₽ подписчиков</div>
+      <div class="subs">52 496 подписчиков</div>
       <div class="link">vk.com/targetolog_reklama_grupp</div>
     </div>
     <span class="ai-tag ai-yes">Использует AI</span>
@@ -237,38 +164,14 @@ body {
   </div>
   <div class="card-body">
     <div class="card-body-inner">
-      <div class="field">
-        <div class="field-label">💰 Стоимость услуг</div>
-        <div class="field-value">По договорённости (настройка, СММ, мега-продвижение)</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📚 Обучающие продукты</div>
-        <div class="field-value">Не указано</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🎯 Ниши</div>
-        <div class="field-value">Новички, владельцы бизнеса, фрилансеры, блогеры (без специализации)</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📊 Кейсы</div>
-        <div class="field-value">Снижение CPL на 30-50%, увеличение конверсии в 2-3 раза (без конкретных кейсов)</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⭐ УТП / Фишка</div>
-        <div class="field-value">Бесплатный анализ группы. Акцент на VK Клипы. «Рабочие стратегии без воды». Полная отчётность.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🤖 AI</div>
-        <div class="field-value">Не использует — стандартные креативы и стратегии без AI</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⚠️ Слабые места</div>
-        <div class="field-value" style="color:#fca5a5">Нет специализации по нише. Нет кейсов с бюджетами. Нет обучения. Всё через личку.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🚀 Что можно забрать</div>
-        <div class="field-value" style="color:#6ee7b7">Зайти с узкой нишей + конкретными кейсами + прозрачным прайсом. На её фоне — на порядок убедительнее.</div>
-      </div>
+      <div class="field"><div class="field-label">💰 Стоимость услуг</div><div class="field-value">По договорённости (настройка, СММ, мега-продвижение)</div></div>
+      <div class="field"><div class="field-label">📚 Обучающие продукты</div><div class="field-value">Не указано</div></div>
+      <div class="field"><div class="field-label">🎯 Ниши</div><div class="field-value">Новички, владельцы бизнеса, фрилансеры, блогеры (без специализации)</div></div>
+      <div class="field"><div class="field-label">📊 Кейсы</div><div class="field-value">Снижение CPL на 30-50%, увеличение конверсии в 2-3 раза (без конкретных кейсов)</div></div>
+      <div class="field"><div class="field-label">⭐ УТП / Фишка</div><div class="field-value">Бесплатный анализ группы. Акцент на VK Клипы. «Рабочие стратегии без воды». Полная отчётность.</div></div>
+      <div class="field"><div class="field-label">🤖 AI</div><div class="field-value">Не использует — стандартные креативы и стратегии без AI</div></div>
+      <div class="field"><div class="field-label">⚠️ Слабые места</div><div class="field-value" style="color:#fca5a5">Нет специализации по нише. Нет кейсов с бюджетами. Нет обучения. Всё через личку.</div></div>
+      <div class="field"><div class="field-label">🚀 Что можно забрать</div><div class="field-value" style="color:#6ee7b7">Зайти с узкой нишей + конкретными кейсами + прозрачным прайсом. На её фоне — на порядок убедительнее.</div></div>
     </div>
   </div>
 </div>
@@ -277,7 +180,7 @@ body {
     <div class="card-num">3</div>
     <div class="card-info">
       <div class="name">Наталия Хорошева — нейросети, таргетолог, смм</div>
-      <div class="subs">43 884 подписчиков</div>
+      <div class="subs">Таргет ВК (ведение месяц): от 20 000₽. SMM: от 15 000₽. Сайт Tilda: 15 000₽. Оформление: 10 000₽. Нейрофото/видео: 1 500-3 000₽ подписчиков</div>
       <div class="link">vk.com/xoroshevatarget</div>
     </div>
     <span class="ai-tag ai-yes">Использует AI</span>
@@ -286,38 +189,14 @@ body {
   </div>
   <div class="card-body">
     <div class="card-body-inner">
-      <div class="field">
-        <div class="field-label">💰 Стоимость услуг</div>
-        <div class="field-value">Не указано публично (кнопки Консультация/Оферта)</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📚 Обучающие продукты</div>
-        <div class="field-value">Не указано (есть Telegram-каналы по нейросетям и таргету)</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🎯 Ниши</div>
-        <div class="field-value">Бьюти, спорт, e-commerce (мебель, WB), медицина, образование, доставка, недвижимость</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📊 Кейсы</div>
-        <div class="field-value">Студия дредов: бюджет 592 200₽, 1.2M показов. Мебель: 163 706₽, 267 лид-форм, CPL 353₽. Школа футбола: 33 947₽, CPL 330₽</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⭐ УТП / Фишка</div>
-        <div class="field-value">Гибрид таргетолог + AI-креатор. Сама создаёт нейрофото/видео. 7+ лет в таргете. Официально: договор + оферта. Ниша-якорь: афропричёски.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🤖 AI</div>
-        <div class="field-value">AI-креатор: нейрофото, нейровидео, памятные ролики через нейросети. Сама генерирует все креативы.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⚠️ Слабые места</div>
-        <div class="field-value" style="color:#fca5a5">Слишком широкий спектр (от нейрофото до сайтов). Размывает позиционирование таргетолога.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🚀 Что можно забрать</div>
-        <div class="field-value" style="color:#6ee7b7">Сфокусироваться на таргет + AI-креативы как единый продукт. Не распыляться на сайты и портреты.</div>
-      </div>
+      <div class="field"><div class="field-label">💰 Стоимость услуг</div><div class="field-value">Не указано публично (кнопки Консультация/Оферта)</div></div>
+      <div class="field"><div class="field-label">📚 Обучающие продукты</div><div class="field-value">Не указано (есть Telegram-каналы по нейросетям и таргету)</div></div>
+      <div class="field"><div class="field-label">🎯 Ниши</div><div class="field-value">Бьюти, спорт, e-commerce (мебель, WB), медицина, образование, доставка, недвижимость</div></div>
+      <div class="field"><div class="field-label">📊 Кейсы</div><div class="field-value">Студия дредов: бюджет 592 200₽, 1.2M показов. Мебель: 163 706₽, 267 лид-форм, CPL 353₽. Школа футбола: 33 947₽, CPL 330₽</div></div>
+      <div class="field"><div class="field-label">⭐ УТП / Фишка</div><div class="field-value">Гибрид таргетолог + AI-креатор. Сама создаёт нейрофото/видео. 7+ лет в таргете. Официально: договор + оферта. Ниша-якорь: афропричёски.</div></div>
+      <div class="field"><div class="field-label">🤖 AI</div><div class="field-value">AI-креатор: нейрофото, нейровидео, памятные ролики через нейросети. Сама генерирует все креативы.</div></div>
+      <div class="field"><div class="field-label">⚠️ Слабые места</div><div class="field-value" style="color:#fca5a5">Слишком широкий спектр (от нейрофото до сайтов). Размывает позиционирование таргетолога.</div></div>
+      <div class="field"><div class="field-label">🚀 Что можно забрать</div><div class="field-value" style="color:#6ee7b7">Сфокусироваться на таргет + AI-креативы как единый продукт. Не распыляться на сайты и портреты.</div></div>
     </div>
   </div>
 </div>
@@ -335,38 +214,14 @@ body {
   </div>
   <div class="card-body">
     <div class="card-body-inner">
-      <div class="field">
-        <div class="field-label">💰 Стоимость услуг</div>
-        <div class="field-value">Тест ВК: 18 000₽. Базовая ВК: 35 000₽. Telegram: 25 000₽. Комплекс: 35 000₽. Консультация: 10 000₽</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📚 Обучающие продукты</div>
-        <div class="field-value">Курс по ВК (групповое): 18 000₽. Личный наставник: 35 000₽</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🎯 Ниши</div>
-        <div class="field-value">Туризм (авторские туры), локальный бизнес (фотостудии), услуги</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📊 Кейсы</div>
-        <div class="field-value">Туризм (Аргентина): CPC 1,63-5₽, CPL 117-145₽. Автопортретная студия: 2 606 переходов, конверсия 88,5%</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⭐ УТП / Фишка</div>
-        <div class="field-value">«Реклама как искусство». Сертификация ВК. 7+ лет опыта. Пересборка офферов и воронок. Точечный подбор аудитории.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🤖 AI</div>
-        <div class="field-value">Не использует — классическая настройка, пересборка офферов без AI</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⚠️ Слабые места</div>
-        <div class="field-value" style="color:#fca5a5">Мало кейсов (2-3). Узкие ниши (туризм, фото). Нет яркого УТП.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🚀 Что можно забрать</div>
-        <div class="field-value" style="color:#6ee7b7">Показать больше ниш и кейсов. УТП сделать про AI и системность, а не 'реклама как искусство'.</div>
-      </div>
+      <div class="field"><div class="field-label">💰 Стоимость услуг</div><div class="field-value">Тест ВК: 18 000₽. Базовая ВК: 35 000₽. Telegram: 25 000₽. Комплекс: 35 000₽. Консультация: 10 000₽</div></div>
+      <div class="field"><div class="field-label">📚 Обучающие продукты</div><div class="field-value">Курс по ВК (групповое): 18 000₽. Личный наставник: 35 000₽</div></div>
+      <div class="field"><div class="field-label">🎯 Ниши</div><div class="field-value">Туризм (авторские туры), локальный бизнес (фотостудии), услуги</div></div>
+      <div class="field"><div class="field-label">📊 Кейсы</div><div class="field-value">Туризм (Аргентина): CPC 1,63-5₽, CPL 117-145₽. Автопортретная студия: 2 606 переходов, конверсия 88,5%</div></div>
+      <div class="field"><div class="field-label">⭐ УТП / Фишка</div><div class="field-value">«Реклама как искусство». Сертификация ВК. 7+ лет опыта. Пересборка офферов и воронок. Точечный подбор аудитории.</div></div>
+      <div class="field"><div class="field-label">🤖 AI</div><div class="field-value">Не использует — классическая настройка, пересборка офферов без AI</div></div>
+      <div class="field"><div class="field-label">⚠️ Слабые места</div><div class="field-value" style="color:#fca5a5">Мало кейсов (2-3). Узкие ниши (туризм, фото). Нет яркого УТП.</div></div>
+      <div class="field"><div class="field-label">🚀 Что можно забрать</div><div class="field-value" style="color:#6ee7b7">Показать больше ниш и кейсов. УТП сделать про AI и системность, а не 'реклама как искусство'.</div></div>
     </div>
   </div>
 </div>
@@ -384,38 +239,14 @@ body {
   </div>
   <div class="card-body">
     <div class="card-body-inner">
-      <div class="field">
-        <div class="field-label">💰 Стоимость услуг</div>
-        <div class="field-value">Таргет: 24 999₽. Комплекс Выгодный: 26 999₽. Стартовый: 33 999₽. MAX: 7 999₽. Аудит: бесплатно.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📚 Обучающие продукты</div>
-        <div class="field-value">Бесплатные обучающие видео. Лид-магнит «Стратегия развития соцсетей»</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🎯 Ниши</div>
-        <div class="field-value">E-commerce (часы, кроссовки), бьюти (цветы), фуд (суши, пицца), здоровье, инфобиз, образование, стройка</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📊 Кейсы</div>
-        <div class="field-value">BestWatch: 3 100₽, 917 подписчиков, CPL 3,38₽. Estethica: 33 032₽, 42 заявки, CPL 760₽. 322 задокументированных кейса.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⭐ УТП / Фишка</div>
-        <div class="field-value">«Команда по цене одного таргетолога» — 4 спеца. 11 лет на рынке. 90% постоянных клиентов. Первые заявки за 24ч.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🤖 AI</div>
-        <div class="field-value">Не использует — команда из 4 специалистов (дизайнер, SMM, таргетолог, стратег). AI не указан.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⚠️ Слабые места</div>
-        <div class="field-value" style="color:#fca5a5">Нет лица бренда (агентство без личности). Нет AI. Нет фокуса — 40+ нищ.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🚀 Что можно забрать</div>
-        <div class="field-value" style="color:#6ee7b7">Сергей как личный бренд с AI-экспертизой vs безликая команда. Ставка на персональное ведение.</div>
-      </div>
+      <div class="field"><div class="field-label">💰 Стоимость услуг</div><div class="field-value">Таргет: 24 999₽. Комплекс Выгодный: 26 999₽. Стартовый: 33 999₽. MAX: 7 999₽. Аудит: бесплатно.</div></div>
+      <div class="field"><div class="field-label">📚 Обучающие продукты</div><div class="field-value">Бесплатные обучающие видео. Лид-магнит «Стратегия развития соцсетей»</div></div>
+      <div class="field"><div class="field-label">🎯 Ниши</div><div class="field-value">E-commerce (часы, кроссовки), бьюти (цветы), фуд (суши, пицца), здоровье, инфобиз, образование, стройка</div></div>
+      <div class="field"><div class="field-label">📊 Кейсы</div><div class="field-value">BestWatch: 3 100₽, 917 подписчиков, CPL 3,38₽. Estethica: 33 032₽, 42 заявки, CPL 760₽. 322 задокументированных кейса.</div></div>
+      <div class="field"><div class="field-label">⭐ УТП / Фишка</div><div class="field-value">«Команда по цене одного таргетолога» — 4 спеца. 11 лет на рынке. 90% постоянных клиентов. Первые заявки за 24ч.</div></div>
+      <div class="field"><div class="field-label">🤖 AI</div><div class="field-value">Не использует — команда из 4 специалистов (дизайнер, SMM, таргетолог, стратег). AI не указан.</div></div>
+      <div class="field"><div class="field-label">⚠️ Слабые места</div><div class="field-value" style="color:#fca5a5">Нет лица бренда (агентство без личности). Нет AI. Нет фокуса — 40+ нищ.</div></div>
+      <div class="field"><div class="field-label">🚀 Что можно забрать</div><div class="field-value" style="color:#6ee7b7">Сергей как личный бренд с AI-экспертизой vs безликая команда. Ставка на персональное ведение.</div></div>
     </div>
   </div>
 </div>
@@ -433,38 +264,14 @@ body {
   </div>
   <div class="card-body">
     <div class="card-body-inner">
-      <div class="field">
-        <div class="field-label">💰 Стоимость услуг</div>
-        <div class="field-value">Не указано (индивидуальный просчёт в ЛС)</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📚 Обучающие продукты</div>
-        <div class="field-value">Не указано</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🎯 Ниши</div>
-        <div class="field-value">Строительство (бани, дома, фундаменты), кухни, заборы, автошколы, стоматология, риелторы</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📊 Кейсы</div>
-        <div class="field-value">Кухни (Калуга): 85 000₽, 169 лидов, CPL 502₽, продажи 1.5 млн₽. Бани-бочки: 80 579₽, 403 лида, CPL 199₽. Строительство домов: 194 158₽, CPL 727₽</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⭐ УТП / Фишка</div>
-        <div class="field-value">11 лет, 1000+ проектов. Заявки от 129₽. Гарантия результата или возврат денег. 35 активных проектов с командой. Рейтинг 5.0.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🤖 AI</div>
-        <div class="field-value">Не использует — чистый сервисный таргет, 1000+ проектов. Креативы стандартные.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⚠️ Слабые места</div>
-        <div class="field-value" style="color:#fca5a5">Нет обучения. Нет прайса. Жёсткая привязка к стройке — рискует если ниша просядет.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🚀 Что можно забрать</div>
-        <div class="field-value" style="color:#6ee7b7">Добавить обучение таргету как 2-й продукт. Показать кейсы в других нишах. Гарантия возврата — забрать себе как фишку.</div>
-      </div>
+      <div class="field"><div class="field-label">💰 Стоимость услуг</div><div class="field-value">Не указано (индивидуальный просчёт в ЛС)</div></div>
+      <div class="field"><div class="field-label">📚 Обучающие продукты</div><div class="field-value">Не указано</div></div>
+      <div class="field"><div class="field-label">🎯 Ниши</div><div class="field-value">Строительство (бани, дома, фундаменты), кухни, заборы, автошколы, стоматология, риелторы</div></div>
+      <div class="field"><div class="field-label">📊 Кейсы</div><div class="field-value">Кухни (Калуга): 85 000₽, 169 лидов, CPL 502₽, продажи 1.5 млн₽. Бани-бочки: 80 579₽, 403 лида, CPL 199₽. Строительство домов: 194 158₽, CPL 727₽</div></div>
+      <div class="field"><div class="field-label">⭐ УТП / Фишка</div><div class="field-value">11 лет, 1000+ проектов. Заявки от 129₽. Гарантия результата или возврат денег. 35 активных проектов с командой. Рейтинг 5.0.</div></div>
+      <div class="field"><div class="field-label">🤖 AI</div><div class="field-value">Не использует — чистый сервисный таргет, 1000+ проектов. Креативы стандартные.</div></div>
+      <div class="field"><div class="field-label">⚠️ Слабые места</div><div class="field-value" style="color:#fca5a5">Нет обучения. Нет прайса. Жёсткая привязка к стройке — рискует если ниша просядет.</div></div>
+      <div class="field"><div class="field-label">🚀 Что можно забрать</div><div class="field-value" style="color:#6ee7b7">Добавить обучение таргету как 2-й продукт. Показать кейсы в других нишах. Гарантия возврата — забрать себе как фишку.</div></div>
     </div>
   </div>
 </div>
@@ -482,38 +289,14 @@ body {
   </div>
   <div class="card-body">
     <div class="card-body-inner">
-      <div class="field">
-        <div class="field-label">💰 Стоимость услуг</div>
-        <div class="field-value">Обучение таргету: 30 000₽. Оформление группы: 9 500₽. Настройка: не указано. Консультация: бесплатно.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📚 Обучающие продукты</div>
-        <div class="field-value">Курс «Обучение таргету»: 30 000₽. Чек-листы и шпаргалки (бесплатные лид-магниты)</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🎯 Ниши</div>
-        <div class="field-value">Строительные и ремонтные компании (ключевая), производство, B2B, авто, торговые компании</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📊 Кейсы</div>
-        <div class="field-value">385 заявок, 89 договоров, 342 млн рублей выручки (бюджет не указан)</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⭐ УТП / Фишка</div>
-        <div class="field-value">Вывод из зависимости от сарафана и Авито. AI-обработка заявок 24/7. 15 лет сама владела стройбизнесом. Бесплатный аудит.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🤖 AI</div>
-        <div class="field-value">AI для обработки заявок 24/7: чат-боты, Senler-воронки. Креативы — стандартные.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⚠️ Слабые места</div>
-        <div class="field-value" style="color:#fca5a5">Мало подписчиков (10k). Нет цен на таргет. Всего 1 кейс с цифрами. Стройка как единственная ниша.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🚀 Что можно забрать</div>
-        <div class="field-value" style="color:#6ee7b7">Показать больше ниш и кейсов. Сделать прайс открытым. AI-обработка заявок — забрать идею.</div>
-      </div>
+      <div class="field"><div class="field-label">💰 Стоимость услуг</div><div class="field-value">Обучение таргету: 30 000₽. Оформление группы: 9 500₽. Настройка: не указано. Консультация: бесплатно.</div></div>
+      <div class="field"><div class="field-label">📚 Обучающие продукты</div><div class="field-value">Курс «Обучение таргету»: 30 000₽. Чек-листы и шпаргалки (бесплатные лид-магниты)</div></div>
+      <div class="field"><div class="field-label">🎯 Ниши</div><div class="field-value">Строительные и ремонтные компании (ключевая), производство, B2B, авто, торговые компании</div></div>
+      <div class="field"><div class="field-label">📊 Кейсы</div><div class="field-value">385 заявок, 89 договоров, 342 млн рублей выручки (бюджет не указан)</div></div>
+      <div class="field"><div class="field-label">⭐ УТП / Фишка</div><div class="field-value">Вывод из зависимости от сарафана и Авито. AI-обработка заявок 24/7. 15 лет сама владела стройбизнесом. Бесплатный аудит.</div></div>
+      <div class="field"><div class="field-label">🤖 AI</div><div class="field-value">AI для обработки заявок 24/7: чат-боты, Senler-воронки. Креативы — стандартные.</div></div>
+      <div class="field"><div class="field-label">⚠️ Слабые места</div><div class="field-value" style="color:#fca5a5">Мало подписчиков (10k). Нет цен на таргет. Всего 1 кейс с цифрами. Стройка как единственная ниша.</div></div>
+      <div class="field"><div class="field-label">🚀 Что можно забрать</div><div class="field-value" style="color:#6ee7b7">Показать больше ниш и кейсов. Сделать прайс открытым. AI-обработка заявок — забрать идею.</div></div>
     </div>
   </div>
 </div>
@@ -531,41 +314,21 @@ body {
   </div>
   <div class="card-body">
     <div class="card-body-inner">
-      <div class="field">
-        <div class="field-label">💰 Стоимость услуг</div>
-        <div class="field-value">Стратегия: от 20 000₽. Таргет VK: 25 000-40 000₽. Комплекс: по договорённости.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📚 Обучающие продукты</div>
-        <div class="field-value">Упоминаются ученики и отзывы учеников, названия и цены не указаны</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🎯 Ниши</div>
-        <div class="field-value">Бьюти (салоны, барберы), локальный бизнес (фитнес, кофейни, доставки, автосервисы), 50+ ниш</div>
-      </div>
-      <div class="field">
-        <div class="field-label">📊 Кейсы</div>
-        <div class="field-value">Лидовый поход: бюджет 17 000₽, 7 лидов, 3 клиента по 25 000₽, выручка 75 000₽ (ROI ~4.4x). Ученики: 5 лидов за 3 дня, CPL ~300₽</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⭐ УТП / Фишка</div>
-        <div class="field-value">400+ проектов. Выручка клиентов 70+ млн₽. Работа в 50+ нишах. Адаптация к алгоритмам VK. Ответ за 1 минуту.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🤖 AI</div>
-        <div class="field-value">Не использует — фокус на адаптации к алгоритмам VK, ручная аналитика</div>
-      </div>
-      <div class="field">
-        <div class="field-label">⚠️ Слабые места</div>
-        <div class="field-value" style="color:#fca5a5">Мало подписчиков (8k). Кейсы слабые (3 клиента по 25к). Нет чёткого УТП.</div>
-      </div>
-      <div class="field">
-        <div class="field-label">🚀 Что можно забрать</div>
-        <div class="field-value" style="color:#6ee7b7">Показать более крупные кейсы. Сделать ставку на 'AI-таргетолог' как отстройку от 'ещё одного таргетолога VK'.</div>
-      </div>
+      <div class="field"><div class="field-label">💰 Стоимость услуг</div><div class="field-value">Стратегия: от 20 000₽. Таргет VK: 25 000-40 000₽. Комплекс: по договорённости.</div></div>
+      <div class="field"><div class="field-label">📚 Обучающие продукты</div><div class="field-value">Упоминаются ученики и отзывы учеников, названия и цены не указаны</div></div>
+      <div class="field"><div class="field-label">🎯 Ниши</div><div class="field-value">Бьюти (салоны, барберы), локальный бизнес (фитнес, кофейни, доставки, автосервисы), 50+ ниш</div></div>
+      <div class="field"><div class="field-label">📊 Кейсы</div><div class="field-value">Лидовый поход: бюджет 17 000₽, 7 лидов, 3 клиента по 25 000₽, выручка 75 000₽ (ROI ~4.4x). Ученики: 5 лидов за 3 дня, CPL ~300₽</div></div>
+      <div class="field"><div class="field-label">⭐ УТП / Фишка</div><div class="field-value">400+ проектов. Выручка клиентов 70+ млн₽. Работа в 50+ нишах. Адаптация к алгоритмам VK. Ответ за 1 минуту.</div></div>
+      <div class="field"><div class="field-label">🤖 AI</div><div class="field-value">Не использует — фокус на адаптации к алгоритмам VK, ручная аналитика</div></div>
+      <div class="field"><div class="field-label">⚠️ Слабые места</div><div class="field-value" style="color:#fca5a5">Мало подписчиков (8k). Кейсы слабые (3 клиента по 25к). Нет чёткого УТП.</div></div>
+      <div class="field"><div class="field-label">🚀 Что можно забрать</div><div class="field-value" style="color:#6ee7b7">Показать более крупные кейсы. Сделать ставку на 'AI-таргетолог' как отстройку от 'ещё одного таргетолога VK'.</div></div>
     </div>
   </div>
 </div>
+<div class="gsheets-link">
+  📊 <a href="https://docs.google.com/spreadsheets/d/1IirOtsEphTl8JQxjBqRYwxJccuGRoYmQ2cOTafYhBCM/edit?usp=drivesdk" target="_blank">Открыть Google Таблицу для копирования данных</a>
+</div>
+
 <div class="insights-section">
   <h2>Ключевые инсайты</h2>
   <ul>
