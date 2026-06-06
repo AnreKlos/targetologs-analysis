@@ -3,116 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Анализ таргетологов ВК</title>
+<title>Анализ таргетологов ВК — Топ-8</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  background: #08080e;
-  color: #e0e0e0;
-  line-height: 1.5;
-}
-.hero {
-  background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a0a1a 100%);
-  padding: 60px 20px;
-  text-align: center;
-  border-bottom: 1px solid #1a1a2e;
-}
-.hero h1 {
-  font-size: 36px;
-  font-weight: 800;
-  background: linear-gradient(135deg, #8b5cf6, #ec4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 12px;
-}
+body { font-family: 'Inter', -apple-system, sans-serif; background: #08080e; color: #e0e0e0; line-height: 1.5; }
+.hero { background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a0a1a 100%); padding: 60px 20px; text-align: center; border-bottom: 1px solid #1a1a2e; }
+.hero h1 { font-size: 36px; font-weight: 800; background: linear-gradient(135deg, #8b5cf6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
 .hero p { color: #888; font-size: 16px; }
-.hero .sub { color: #666; font-size: 14px; margin-top: 8px; }
-.stats-row {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 30px 20px;
-  border-bottom: 1px solid #111;
-  flex-wrap: wrap;
-}
+.stats-row { display: flex; justify-content: center; gap: 40px; padding: 30px 20px; border-bottom: 1px solid #111; flex-wrap: wrap; }
 .stat-item { text-align: center; }
 .stat-item .num { font-size: 32px; font-weight: 800; color: #8b5cf6; }
 .stat-item .label { font-size: 13px; color: #666; margin-top: 4px; }
 .container { max-width: 900px; margin: 0 auto; padding: 30px 16px; }
-.card {
-  background: #0e0e16;
-  border: 1px solid #1a1a2e;
-  border-radius: 16px;
-  margin-bottom: 16px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.2s;
-}
+.card { background: #0e0e16; border: 1px solid #1a1a2e; border-radius: 16px; margin-bottom: 16px; overflow: hidden; cursor: pointer; transition: all 0.2s; }
 .card:hover { border-color: #2a2a4e; }
-.card-header {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  gap: 16px;
-  user-select: none;
-}
-.card-num {
-  width: 36px; height: 36px;
-  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 14px; color: #fff;
-  flex-shrink: 0;
-}
+.card-header { display: flex; align-items: center; padding: 20px; gap: 16px; user-select: none; }
+.card-num { width: 36px; height: 36px; background: linear-gradient(135deg, #8b5cf6, #6d28d9); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: #fff; flex-shrink: 0; }
 .card-info { flex: 1; min-width: 0; }
 .card-info .name { font-weight: 600; font-size: 16px; color: #fff; }
 .card-info .subs { font-size: 13px; color: #8b5cf6; margin-top: 2px; }
 .card-info .link { font-size: 12px; color: #555; margin-top: 1px; }
-.card-badge {
-  padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;
-  white-space: nowrap; flex-shrink: 0;
-}
+.card-badge { padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
 .badge-price { background: #1c1917; color: #fbbf24; }
 .card-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
 .card.open .card-body { max-height: 2000px; }
 .card-body-inner { padding: 0 20px 20px; border-top: 1px solid #1a1a2e; padding-top: 16px; }
 .field { margin-bottom: 14px; }
+.field:last-child { margin-bottom: 0; }
 .field-label { font-size: 11px; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
 .field-value { font-size: 14px; color: #ccc; line-height: 1.5; }
-.ai-tag {
-  display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500;
-}
+.ai-tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500; }
 .ai-yes { background: #065f46; color: #6ee7b7; }
 .ai-partial { background: #451a03; color: #fbbf24; }
 .ai-no { background: #1c1917; color: #a8a29e; }
-.insights-section {
-  margin-top: 40px; padding: 30px;
-  background: #0e0e16; border: 1px solid #1a1a2e; border-radius: 16px;
-}
+.insights-section { margin-top: 40px; padding: 30px; background: #0e0e16; border: 1px solid #1a1a2e; border-radius: 16px; }
 .insights-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px; color: #8b5cf6; }
 .insights-section ul { list-style: none; }
-.insights-section li {
-  padding: 12px 0; border-bottom: 1px solid #1a1a2e; font-size: 14px; color: #bbb;
-}
+.insights-section li { padding: 12px 0; border-bottom: 1px solid #1a1a2e; font-size: 14px; color: #bbb; }
 .insights-section li:last-child { border-bottom: none; }
 .insights-section .hl { color: #a78bfa; font-weight: 600; }
 .toggle-icon { font-size: 18px; color: #555; transition: transform 0.3s; flex-shrink: 0; }
 .card.open .toggle-icon { transform: rotate(180deg); }
-.gsheets-link {
-  text-align: center; margin: 30px 0; padding: 20px;
-  background: #0e0e16; border: 1px solid #1a1a2e; border-radius: 12px;
-}
-.gsheets-link a { color: #8b5cf6; text-decoration: none; font-weight: 600; }
-.gsheets-link a:hover { text-decoration: underline; }
+@media (max-width: 600px) { .hero h1 { font-size: 24px; } .card-header { flex-wrap: wrap; } }
 </style>
 </head>
 <body>
 <div class="hero">
   <h1>Топ-8 таргетологов ВКонтакте</h1>
   <p>Конкурентный анализ: цены, кейсы, ниши, AI — кликни по карточке для деталей</p>
-  <div class="sub">Июнь 2026 • Исследование для стратегии позиционирования</div>
 </div>
 <div class="stats-row">
   <div class="stat-item"><div class="num">8</div><div class="label">экспертов</div></div>
@@ -121,38 +60,9 @@ body {
   <div class="stat-item"><div class="num">5/8</div><div class="label">скрывают цены</div></div>
 </div>
 <div class="container">
-
-<div class="gsheets-link">
-  📊 <a href="https://docs.google.com/spreadsheets/d/1IirOtsEphTl8JQxjBqRYwxJccuGRoYmQ2cOTafYhBCM/edit?usp=drivesdk" target="_blank">Открыть полную Google Таблицу</a> — все данные в структурированном виде
-</div>
 <div class="card" onclick="this.classList.toggle('open')">
   <div class="card-header">
     <div class="card-num">1</div>
-    <div class="card-info">
-      <div class="name">Сергей Войцицкий</div>
-      <div class="subs">~1 000 (личная стр.) подписчиков</div>
-      <div class="link">vk.com/sergey_voytsitskiy</div>
-    </div>
-    <span class="ai-tag ai-no">Без AI</span>
-    <span class="card-badge badge-price">Нет цен</span>
-    <div class="toggle-icon">▼</div>
-  </div>
-  <div class="card-body">
-    <div class="card-body-inner">
-      <div class="field"><div class="field-label">💰 Стоимость услуг</div><div class="field-value">Не указано (обсуждается в ЛС)</div></div>
-      <div class="field"><div class="field-label">📚 Обучающие продукты</div><div class="field-value">Не указано (упоминает обучение через нейросети)</div></div>
-      <div class="field"><div class="field-label">🎯 Ниши</div><div class="field-value">Локальный бизнес (Омск), химчистка, тату, мебель, инфобиз</div></div>
-      <div class="field"><div class="field-label">📊 Кейсы</div><div class="field-value">Кейс 1: подписчики VK по 25 руб. Кейс 2: бюджет 500 000 руб. на розыгрыш</div></div>
-      <div class="field"><div class="field-label">⭐ УТП / Фишка</div><div class="field-value">«Не блогер, не продюсер». Холодный трафик ВК. Окупаемость 5-20x. Опыт с 2015.</div></div>
-      <div class="field"><div class="field-label">🤖 AI</div><div class="field-value">Не использует — классический холодный трафик, стандартные креативы</div></div>
-      <div class="field"><div class="field-label">⚠️ Слабые места</div><div class="field-value" style="color:#fca5a5">Нет кейсов с цифрами. Активность на стене — 11 постов. Нет прайса. Нет обучения.</div></div>
-      <div class="field"><div class="field-label">🚀 Что можно забрать</div><div class="field-value" style="color:#6ee7b7">Сделать упор на прозрачные цены + регулярные кейс-стади. Добавить обучение как продукт.</div></div>
-    </div>
-  </div>
-</div>
-<div class="card" onclick="this.classList.toggle('open')">
-  <div class="card-header">
-    <div class="card-num">2</div>
     <div class="card-info">
       <div class="name">Юлия Филиппова | Таргетолог Реклама ВКонтакте СММ</div>
       <div class="subs">52 496 подписчиков</div>
@@ -170,8 +80,33 @@ body {
       <div class="field"><div class="field-label">📊 Кейсы</div><div class="field-value">Снижение CPL на 30-50%, увеличение конверсии в 2-3 раза (без конкретных кейсов)</div></div>
       <div class="field"><div class="field-label">⭐ УТП / Фишка</div><div class="field-value">Бесплатный анализ группы. Акцент на VK Клипы. «Рабочие стратегии без воды». Полная отчётность.</div></div>
       <div class="field"><div class="field-label">🤖 AI</div><div class="field-value">Не использует — стандартные креативы и стратегии без AI</div></div>
-      <div class="field"><div class="field-label">⚠️ Слабые места</div><div class="field-value" style="color:#fca5a5">Нет специализации по нише. Нет кейсов с бюджетами. Нет обучения. Всё через личку.</div></div>
+      <div class="field"><div class="field-label">⚠️ Слабые места</div><div class="field-value" style="color:#fca5a5">Нет специализации по нише. Нет кейсов с бюджетами. Нет обучения. Всё через личку</div></div>
       <div class="field"><div class="field-label">🚀 Что можно забрать</div><div class="field-value" style="color:#6ee7b7">Зайти с узкой нишей + конкретными кейсами + прозрачным прайсом. На её фоне — на порядок убедительнее.</div></div>
+    </div>
+  </div>
+</div>
+<div class="card" onclick="this.classList.toggle('open')">
+  <div class="card-header">
+    <div class="card-num">2</div>
+    <div class="card-info">
+      <div class="name">Наталия Хорошева — нейросети, таргетолог, смм</div>
+      <div class="subs">43 884 подписчиков</div>
+      <div class="link">vk.com/xoroshevatarget</div>
+    </div>
+    <span class="ai-tag ai-yes">Использует AI</span>
+    
+    <div class="toggle-icon">▼</div>
+  </div>
+  <div class="card-body">
+    <div class="card-body-inner">
+      <div class="field"><div class="field-label">💰 Стоимость услуг</div><div class="field-value">Таргет ВК (ведение месяц): от 20 000₽. SMM: от 15 000₽. Сайт Tilda: 15 000₽. Оформление: 10 000₽. Нейрофото/видео: 1 500-3 000₽</div></div>
+      <div class="field"><div class="field-label">📚 Обучающие продукты</div><div class="field-value">Не указано (есть Telegram-каналы по нейросетям и таргету)</div></div>
+      <div class="field"><div class="field-label">🎯 Ниши</div><div class="field-value">Бьюти (афропричёски), спорт (футбол), e-commerce (мебель, WB), медицина, образование, доставка, недвижимость</div></div>
+      <div class="field"><div class="field-label">📊 Кейсы</div><div class="field-value">Студия дредов: бюджет 592 200₽, 1.2M показов, CPC 23₽. Мебель: 163 706₽, 267 лид-форм, CPL 353₽. Школа футбола: 33 947₽, CPL 330₽. Салон красоты: 26 659₽, 203 обращения.</div></div>
+      <div class="field"><div class="field-label">⭐ УТП / Фишка</div><div class="field-value">Гибрид таргетолог + AI-креатор. Сама создаёт нейрофото/видео. 7+ лет в таргете. Официально: договор + оферта. Ниша-якорь: афропричёски.</div></div>
+      <div class="field"><div class="field-label">🤖 AI</div><div class="field-value">AI-креатор: нейрофото, нейровидео, памятные ролики через нейросети. Сама генерирует все креативы.</div></div>
+      <div class="field"><div class="field-label">⚠️ Слабые места</div><div class="field-value" style="color:#fca5a5">Слишком широкий спектр (от нейрофото до сайтов). Размывает позиционирование таргетолога.</div></div>
+      <div class="field"><div class="field-label">🚀 Что можно забрать</div><div class="field-value" style="color:#6ee7b7">Сфокусироваться на таргет + AI-креативы как единый продукт. Не распыляться на сайты и портреты.</div></div>
     </div>
   </div>
 </div>
@@ -325,10 +260,6 @@ body {
     </div>
   </div>
 </div>
-<div class="gsheets-link">
-  📊 <a href="https://docs.google.com/spreadsheets/d/1IirOtsEphTl8JQxjBqRYwxJccuGRoYmQ2cOTafYhBCM/edit?usp=drivesdk" target="_blank">Открыть Google Таблицу для копирования данных</a>
-</div>
-
 <div class="insights-section">
   <h2>Ключевые инсайты</h2>
   <ul>
